@@ -8,4 +8,10 @@ app.get('/',(req,res)=>{
 
 })
 
+app.get('/user',(req,res)=>{
+
+    res.json({code:200,"message":"user page"})
+
+})
+
 app.listen(8081)
