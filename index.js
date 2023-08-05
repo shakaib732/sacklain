@@ -1,5 +1,10 @@
-const express = require('express')
+const express = require('express');
+const nodemon = require("nodemon");
+const dotenv = require("dotenv").config();
+
 const app = express();
+
+const port = process.env.PORT || 5000;
 
 
 app.get('/',(req,res)=>{
@@ -14,4 +19,6 @@ app.get('/user',(req,res)=>{
 
 })
 
-app.listen(8081)
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+  });
