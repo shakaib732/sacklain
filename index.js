@@ -1,4 +1,5 @@
 const express = require('express');
+const { request } = require('http');
 const nodemon = require("nodemon");
 const dotenv = require("dotenv").config();
 
@@ -24,7 +25,9 @@ app.get('/welcome',(req,res)=>{
 
 app.get('/user',(req,res)=>{
 
-    res.json({code:200,"message":"user page"})
+    let { num1, num2 } = req.query;
+    let mul = parseInt(num1) * parseInt(num2);
+    res.json({ code: 200, "Multiplication": mul });
 
 })
 
