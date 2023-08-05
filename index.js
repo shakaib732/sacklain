@@ -15,7 +15,10 @@ app.get('/',(req,res)=>{
 
 app.get('/welcome',(req,res)=>{
 
-    res.json({code:200,"message":"welcome"})
+    let {num1,num2} = req.query;
+    let sum = parseInt(num1)+parseInt(num2)
+
+    res.json({code:200,"Summation":sum})
 
 })
 
